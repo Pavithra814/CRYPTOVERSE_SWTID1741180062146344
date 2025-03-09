@@ -1,0 +1,1120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root[data-theme="light"] {
+  --text-primary: #2C3E50;
+  --text-secondary: #4a5568;
+  --bgPrimary: #ffffff;
+  --bgSecondary: #f8fafc;
+  --primary: #3498db;
+  --secondary: #2ecc71;
+  --border: #e2e8f0;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --navbar-bg: #ffffff;
+  --menu-text: #2C3E50;
+  --chart-title: #2C3E50;
+}
+
+:root[data-theme="dark"] {
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --bgPrimary: #1a202c;
+  --bgSecondary: #2d3748;
+  --primary: #60a5fa;
+  --secondary: #34d399;
+  --border: #4a5568;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --navbar-bg: #1a202c;
+  --menu-text: #f8fafc;
+  --chart-title: #f8fafc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bgPrimary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--pink) !important;
+}
+
+.app {
+  display: flex;
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: var(--navbar-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.routes {
+  padding: 20px;
+  min-height: 100vh;
+}
+.nav-container {
+  position: relative;
+  width: 280px;
+  margin: 10px;
+  height: 100vh;
+  margin: 0px;
+  background-color: var(--bgPrimary);
+  border-right: 1px solid var(--border);
+}
+
+.logo-container {
+  background: var(--bgPrimary);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.footer-heading {
+  letter-spacing: 1.2px;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.logo {
+  margin: 0 0 0 15px;
+  margin-top: 10px;
+}
+.logo a {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.logo a:hover {
+  color: var(--primary) !important;
+}
+.menu {
+  background-color: var(--bgPrimary);
+  padding: 16px;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: fit-content;
+  height: fit-content;
+  list-style-type: none;
+  border: 1px solid var(--border);
+}
+@media screen and (max-width: 800px) {
+  .menu {
+    background-color: var(--bgPrimary);
+    position: absolute;
+    right: 0;
+    top: 60px;
+    z-index: 1000;
+    box-shadow: var(--card-shadow);
+  }
+}
+
+.menu-item {
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item:hover {
+  background-color: var(--bgSecondary);
+}
+
+.menu-item:hover .menu-icon,
+.menu-item:hover .link {
+  color: var(--primary) !important;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.link {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu-control-container {
+  width: 50px;
+  height: 40px;
+  border-radius: 6px;
+  display: none !important;
+  position: absolute !important;
+  right: 10px !important;
+  top: 25px !important;
+  font-size: 1.2rem !important;
+  background-color: var(--bgSecondary) !important;
+  border: none !important;
+}
+
+.loader {
+  height: 81vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .main {
+    min-width: calc(100% - 300px);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .app {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .navbar {
+    flex: 1;
+  }
+
+  .main {
+    flex: 1;
+    margin-top: 90px;
+  }
+
+  .nav-container {
+    background-color: #001529;
+    height: 8vh;
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    z-index: 100;
+  }
+
+  .menu-control-container {
+    display: block !important;
+  }
+
+  .ant-menu {
+    position: absolute;
+    right: 0px;
+  }
+  .home-title {
+    font-size: 1.4rem !important;
+  }
+  .show-more {
+    font-size: 1.3rem !important;
+  }
+}
+
+.coin-detail-container {
+  background: var(--bgPrimary);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+  margin: 24px;
+}
+
+.coin-heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  gap: 10px;
+}
+
+.coin-heading-container .coin-name {
+  font-weight: 900;
+  color: var(--pink);
+}
+
+.coin-heading-container p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.stats-container {
+  background: var(--bgSecondary);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.stats-container h2 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-top: 20px;
+  color: var(--pink);
+}
+
+.coin-details-heading {
+  font-weight: 700 !important;
+  margin-top: 20px !important;
+  color: var(--pink) !important;
+}
+
+.coin-stats {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+  opacity: 0.9;
+  padding: 20px;
+}
+
+.coin-stats-name {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.stats {
+  font-weight: 800;
+}
+
+.coin-value-statistics-heading p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.coin-desc-link {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.coin-desc-link h2 {
+  font-weight: 700;
+  color: var(--pink);
+}
+
+.coin-desc-link p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.coin-desc-link a {
+  color: var(--pink);
+}
+
+.coin-desc-link h3 {
+  font-weight: 700;
+}
+
+.coin-desc {
+  flex: 0.5;
+}
+
+.coin-links {
+  padding: 0px 20px;
+  flex: 0.5;
+}
+
+.coin-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+}
+
+.link-name {
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.coin-link a {
+  color: var(--pink);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.coin-link:hover,
+.coin-stats:hover {
+  background-color: var(--bgSecondary);
+}
+
+@media screen and (max-width: 1000px) {
+  .stats-container {
+    flex-direction: column;
+  }
+  .coin-desc-link {
+    flex-direction: column;
+  }
+  .stats-container h2 {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .coin-links {
+    padding: 0px;
+  }
+  .coin-detail-container {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .heading {
+    margin-top: 20px;
+  }
+}
+
+.select-news {
+  width: 180px;
+}
+.news-card {
+  min-height: 300px !important;
+}
+.news-image-container {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.news-title {
+  width: 70%;
+}
+
+.news-image-container .img {
+  width: 100px;
+  height: 100px;
+}
+.news-card p {
+  color: var(--text-primary);
+  margin: 10px 0px !important;
+}
+.provider-container {
+  display: flex;
+  justify-content: space-between;
+}
+.provider-name {
+  margin-left: 10px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.chart-title {
+  color: var(--text-primary) !important;
+}
+.price-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.price-change {
+  font-weight: 900 !important;
+  margin: 0 !important;
+}
+.current-price {
+  margin: 0 !important;
+  font-weight: 900 !important;
+}
+.home-heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0 20px 0;
+}
+.show-more {
+  margin: 0 !important;
+}
+.exchange-image {
+  margin: 0px 10px !important;
+}
+.search-crypto {
+  margin: 20px auto 30px auto;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+}
+.crypto-card-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  min-height: 65vh !important;
+}
+.crypto-card {
+  background: var(--bgPrimary);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.crypto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+}
+.crypto-card .ant-card-head {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.crypto-card .ant-card-head-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.crypto-card .ant-card-body {
+  padding: 20px;
+}
+.crypto-card .crypto-image {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin: 0;
+}
+.crypto-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.crypto-details p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 !important;
+  font-size: 0.95rem;
+}
+.crypto-details .label {
+  color: var(--text-secondary);
+}
+.crypto-details .value {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.crypto-details .change-positive {
+  color: #10b981;
+}
+.crypto-details .change-negative {
+  color: #ef4444;
+}
+.crypto-controls {
+  margin-bottom: 32px;
+  padding: 0 20px;
+}
+.search-crypto .ant-input {
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: var(--bgSecondary) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-primary) !important;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+.search-crypto .ant-input:hover {
+  border-color: var(--primary) !important;
+  background: var(--bgPrimary) !important;
+}
+.search-crypto .ant-input:focus {
+  border-color: var(--primary) !important;
+  background: var(--bgPrimary) !important;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1) !important;
+}
+.search-crypto .ant-input::placeholder {
+  color: var(--text-secondary) !important;
+  opacity: 0.7;
+}
+.search-crypto .ant-input-clear-icon {
+  color: var(--text-secondary) !important;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.search-crypto .ant-input-clear-icon:hover {
+  color: var(--text-primary) !important;
+}
+.search-info {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 0 4px;
+}
+.no-results {
+  color: #ef4444;
+  margin-left: 8px;
+  font-weight: 500;
+}
+@media screen and (max-width: 1200px) {
+  .crypto-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+@media screen and (max-width: 768px) {
+  .crypto-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+.footer {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  padding: 20px;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-section {
+  padding: 8px;
+}
+
+.filter-section h4 {
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ant-card {
+  background: var(--bgPrimary) !important;
+  border-color: var(--border) !important;
+}
+
+.ant-card-head {
+  background: var(--bgSecondary) !important;
+  border-color: var(--border) !important;
+}
+
+.ant-card-head-title {
+  color: var(--text-primary) !important;
+}
+
+.ant-slider-track {
+  background-color: var(--primary) !important;
+}
+
+.ant-slider-handle {
+  border-color: var(--primary) !important;
+}
+
+.ant-select-selector {
+  background: var(--bgSecondary) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-select-selection-item {
+  color: var(--text-primary) !important;
+}
+
+.ant-select-dropdown {
+  background: var(--bgSecondary) !important;
+  border-color: var(--border) !important;
+}
+
+.ant-select-item {
+  color: var(--text-primary) !important;
+}
+
+.ant-select-item-option-selected {
+  background: var(--primary) !important;
+}
+
+.ant-select-item-option-active {
+  background: var(--border) !important;
+}
+
+.ant-switch {
+  background-color: var(--border) !important;
+}
+
+.ant-switch-checked {
+  background-color: var(--primary) !important;
+}
+
+.ant-switch-disabled {
+  opacity: 0.6;
+}
+
+/* Portfolio Section Styles */
+.portfolio-wrapper {
+  margin: 20px 0 40px 0;
+  padding: 24px;
+  background: var(--bgPrimary);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
+}
+
+.portfolio-section {
+  margin-top: 0;  /* Override previous margin */
+  padding: 0;     /* Override previous padding */
+}
+
+.portfolio-section .ant-typography {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.portfolio-stats .ant-card {
+  background: var(--bgSecondary);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-stats .ant-card:hover {
+  transform: translateY(-4px);
+}
+
+.add-holding-card {
+  background: var(--bgSecondary);
+  margin: 32px 0;
+}
+
+.holdings-table {
+  margin-top: 32px;
+}
+
+/* Update spacing for other elements */
+.search-crypto {
+  margin: 32px auto;
+}
+
+.crypto-card-container {
+  margin-top: 32px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .portfolio-wrapper {
+    padding: 16px;
+    margin: 16px 0 32px 0;
+  }
+
+  .portfolio-section .ant-typography {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .portfolio-stats {
+    margin-bottom: 16px;
+  }
+
+  .add-holding-card {
+    margin: 24px 0;
+  }
+}
+
+.heading {
+  color: var(--text-primary) !important;
+  margin-bottom: 24px !important;
+}
+
+.ant-card {
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+}
+
+.ant-statistic-title {
+  color: var(--text-secondary) !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 8px !important;
+}
+
+.ant-statistic-content {
+  color: var(--text-primary) !important;
+  font-size: 1.5rem !important;
+}
+
+.home-title {
+  margin: 0 !important;
+}
+
+.show-more {
+  margin: 0 !important;
+}
+
+.show-more a {
+  color: var(--primary) !important;
+  transition: opacity 0.3s ease;
+}
+
+.show-more a:hover {
+  opacity: 0.8;
+}
+
+.search-crypto .ant-input-clear-icon {
+  color: var(--text-secondary);
+}
+
+.search-crypto .ant-input-clear-icon:hover {
+  color: var(--text-primary);
+}
+
+.search-crypto .ant-input {
+  padding-right: 32px;
+}
+
+.search-crypto .ant-input:hover,
+.search-crypto .ant-input:focus {
+  border-color: var(--primary);
+}
+
+.ant-input {
+  background: var(--bgSecondary) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-input::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+.ant-card-head-title {
+  color: var(--text-primary) !important;
+}
+
+.ant-statistic-title {
+  color: var(--text-secondary) !important;
+}
+
+.ant-statistic-content {
+  color: var(--text-primary) !important;
+}
+
+.portfolio-section .ant-typography {
+  color: var(--text-primary);
+}
+
+.add-holding-card .ant-card-head {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Add hover effects */
+.ant-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.coin-select:hover,
+.ant-input:hover {
+  border-color: var(--primary);
+}
+
+.coin-select:focus,
+.ant-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+/* Portfolio Page Styles */
+.portfolio-page {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.portfolio-page .heading {
+  color: var(--text-primary);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.portfolio-container {
+  background: var(--bgPrimary);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+.portfolio-tracker {
+  margin-top: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio-page {
+    padding: 16px;
+  }
+  
+  .portfolio-container {
+    padding: 16px;
+  }
+}
+
+/* Style the menu item */
+.menu-item .wallet-icon {
+  color: white;
+  margin-right: 10px;
+}
+
+/* Add hover effect for the portfolio menu item */
+.menu-item:hover .wallet-icon {
+  color: var(--primary);
+}
+
+/* Dark theme specific adjustments */
+:root[data-theme="dark"] .search-crypto .ant-input {
+  background: rgba(45, 55, 72, 0.8) !important;
+}
+
+:root[data-theme="dark"] .search-crypto .ant-input:hover,
+:root[data-theme="dark"] .search-crypto .ant-input:focus {
+  background: var(--bgSecondary) !important;
+}
+
+/* Chart Styles */
+.select-timeperiod {
+  width: 200px !important;
+  margin: 30px 0 !important;
+  background: var(--bgSecondary) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+.select-timeperiod .ant-select-selector {
+  background: var(--bgSecondary) !important;
+  border: none !important;
+}
+
+.select-timeperiod .ant-select-selection-item {
+  color: var(--text-primary) !important;
+}
+
+@media screen and (max-width: 500px) {
+  .chart-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .price-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* Filter Guide Styles */
+.filter-guide-container {
+  background: var(--bgPrimary);
+}
+
+.guide-card, .filter-card {
+  background: var(--bgSecondary) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+}
+
+.guide-card .ant-card-head,
+.filter-card .ant-card-head {
+  background: var(--bgPrimary);
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-card .ant-list-item,
+.filter-card .ant-list-item {
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.guide-card .ant-list-item:last-child,
+.filter-card .ant-list-item:last-child {
+  border-bottom: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-guide-container {
+    padding: 16px;
+  }
+}
+
+/* Filter Guide Collapse Styles */
+.filter-collapse {
+  background: var(--bgPrimary) !important;
+}
+
+.filter-collapse .ant-collapse-item {
+  border-color: var(--border) !important;
+}
+
+.filter-collapse .ant-collapse-header {
+  background: var(--bgSecondary) !important;
+  padding: 16px 24px !important;
+}
+
+.filter-collapse .ant-collapse-content {
+  background: var(--bgPrimary) !important;
+  border-color: var(--border) !important;
+}
+
+.filter-collapse .ant-collapse-content-box {
+  padding: 24px !important;
+}
+
+.filter-collapse .ant-collapse-arrow {
+  color: var(--text-primary) !important;
+}
+
+.filter-collapse .ant-card {
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-collapse .ant-collapse-content-box {
+    padding: 16px !important;
+  }
+}
+
+/* Nested Collapse Styles */
+.nested-collapse {
+  background: var(--bgPrimary) !important;
+  border-color: var(--border) !important;
+}
+
+.nested-collapse .ant-collapse-item {
+  border-color: var(--border) !important;
+  margin-bottom: 12px;
+}
+
+.nested-collapse .ant-collapse-header {
+  background: var(--bgSecondary) !important;
+  padding: 12px 16px !important;
+  border-radius: 8px !important;
+}
+
+.nested-collapse .ant-collapse-content {
+  background: var(--bgPrimary) !important;
+  border-color: var(--border) !important;
+}
+
+.nested-collapse .ant-collapse-content-box {
+  padding: 16px !important;
+}
+
+.nested-collapse .filter-card {
+  border: none;
+  box-shadow: none;
+  background: transparent !important;
+}
+
+.nested-collapse .ant-collapse-item:last-child {
+  margin-bottom: 0;
+}
+
+.nested-collapse .ant-collapse-header:hover {
+  background: var(--border) !important;
+}
+
+/* Language Toggle Styles */
+.ant-select-selector {
+  background: var(--bgSecondary) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-select-selection-item {
+  color: var(--text-primary) !important;
+}
+
+.ant-select-dropdown {
+  background: var(--bgSecondary) !important;
+  border-color: var(--border) !important;
+}
+
+.ant-select-item {
+  color: var(--text-primary) !important;
+}
+
+.ant-select-item-option-selected {
+  background: var(--primary) !important;
+}
+
+.ant-select-item-option-active {
+  background: var(--border) !important;
+}
+
+@media screen and (max-width: 800px) {
+  .logo-container {
+    padding: 16px;
+  }
+  
+  .language-toggle {
+    margin-right: 60px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ant-spin {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.splash-icon {
+  opacity: 0;
+  animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}  
